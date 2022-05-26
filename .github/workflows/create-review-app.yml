@@ -21,11 +21,11 @@ jobs:
           --exclude-from '.gitignore' \
           . $SSH_USERNAME@$SSH_HOST:~/var/www/testing/${{ github.head_ref }}/
         env:
-         SSH_USER: ${{ secrets.SSH_USERNAME }}
+         SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
          SSH_HOST: ${{ secrets.SSH_HOST }}
       - name: Init the app
         run: |
           ssh $SSH_USERNAME@$SSH_HOST "pushd ~/var/www/testing/${{ github.head_ref }} && ./bin/start && && popd && sudo chown www-data:www-data ~/var/www/testing/${{ github.head_ref }} -R && sudo chmod g+w ~/var/www/testing/${{ github.head_ref }} -R"
         env:
-         SSH_USER: ${{ secrets.SSH_USERNAME }}
+         SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
          SSH_HOST: ${{ secrets.SSH_HOST }}
