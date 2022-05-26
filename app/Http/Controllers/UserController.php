@@ -9,7 +9,7 @@ class UserController extends Controller
     public function index()
     {
         return [
-            'user' => 1,
+            'user' => 2,
             'user_name' => 'Viktor'
         ];
     }
