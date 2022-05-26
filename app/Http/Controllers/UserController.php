@@ -9,7 +9,15 @@ class UserController extends Controller
     public function index()
     {
         return [
+<<<<<<< HEAD
             'user' => 2,
+=======
+<<<<<<< HEAD
+            'user' => 2,
+=======
+            'user' => 1,
+>>>>>>> 9a4dd3b2518143d9b39a3d66136eb6b5401bd088
+>>>>>>> 03df5e0a0ac2851260bfb64f0f3072c660402654
             'user_name' => 'Viktor'
         ];
     }
