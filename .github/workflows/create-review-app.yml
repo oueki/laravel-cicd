@@ -17,9 +17,9 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       - name: Copy files to the server
         run: |
-          rsync -a -r --progress --human-readable --delete \
+          rsync -a -r --progress --mkpath --human-readable --delete \
           --exclude-from '.gitignore' \
-          . $SSH_USERNAME@$SSH_HOST:~/var/www/testing/${{ github.head_ref }}/
+          . $SSH_USERNAME@$SSH_HOST:/var/www/testing/${{ github.head_ref }}/
         env:
          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
          SSH_HOST: ${{ secrets.SSH_HOST }}
